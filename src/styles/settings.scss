@@ -1,0 +1,10 @@
+$font-name: 'Open Sans', sans-serif;
+
+@use "vuetify" with (
+    $body-font-family: $font-name,
+    $heading-font-family: $font-name,
+);
+
+html {
+  overflow: auto;
+}
