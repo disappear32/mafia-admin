@@ -8,4 +8,4 @@ export const RESULT_IDS = {
   WIN: 1,
 } as const;
 
-export type IResultId = typeof RESULT_IDS[keyof typeof RESULT_IDS];
+export type ResultId = typeof RESULT_IDS[keyof typeof RESULT_IDS];

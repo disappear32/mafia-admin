@@ -6,7 +6,7 @@
       >
         <v-list nav>
           <v-list-item
-            to="/users"
+            :to="{ path: '/users', query: route.query }"
             prepend-icon="mdi-account-file-outline"
             title="Игроки"
             value="players"

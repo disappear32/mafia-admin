@@ -1,29 +1,12 @@
 <script setup lang="ts">
-import {computed, watch} from 'vue';
+import {computed} from 'vue';
 import {storeToRefs} from 'pinia';
 import {usePlayerStore} from '@/api/playerStore.ts';
 import {ROLE_NAMES} from '@/types/IRole.ts';
 import {formatValue, getRoleText} from '@/utils/utils.ts';
-import PlayerHistory from '@/widgets/PlayerHistory.vue';
-
-const props = defineProps<{id: number}>();
 
 const playerStore = usePlayerStore();
-const {fetchData} = playerStore;
-fetchData(props.id);
-
-watch(() => props.id, (newId) => {
-  fetchData(newId);
-});
-
-const {
-  name,
-  id,
-  total,
-  byRole,
-  bySeatNumber,
-  history,
-} = storeToRefs(playerStore);
+const {byRole} = storeToRefs(playerStore);
 
 const gamesCountByRole = computed(() => ({
   [ROLE_NAMES.MAFIA]: byRole.value[ROLE_NAMES.MAFIA].gamesCount,
@@ -63,10 +46,8 @@ const bestPlayerPointsByRole = computed(() => ({
 </script>
 
 <template>
-  <div class="pt-4">
-    <h2 class="mb-4">По ролям:</h2>
-
-    <v-row align="start">
+  <div class="flex-0-0 full-height">
+    <v-row align="start" class="full-height">
       <v-col
         v-for="role in ROLE_NAMES"
         :key="role"
@@ -105,13 +86,5 @@ const bestPlayerPointsByRole = computed(() => ({
         </v-card>
       </v-col>
     </v-row>
-
-    <PlayerHistory
-      :games="history"
-    />
   </div>
 </template>
-
-<style scoped>
-
-</style>

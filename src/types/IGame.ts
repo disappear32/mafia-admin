@@ -1,6 +1,9 @@
+import type {RoleName} from '@/types/IRole.ts';
+import type {ResultId} from '@/types/IResult.ts';
+
 export type Game = {
-  role: string; //TODO заменить на RoleName после реализации бэка
-  resultId: number; //TODO заменить на ResultId после реализации бэка
+  role: RoleName;
+  resultId: ResultId;
   date: string;
   seatNumber: number;
   points: number;

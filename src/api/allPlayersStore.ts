@@ -6,7 +6,7 @@ import type {LightPlayer} from '@/types/IPlayer.ts';
 export const useAllPlayerStore = defineStore('allPlayers', () => {
   const lightPlayers = ref<LightPlayer[]>([]);
 
-  const fetchData = () => {
+  const fetchAllPlayers = () => {
     lightPlayers.value = stats.map(({id, name}) => ({
       id,
       name,
@@ -15,7 +15,7 @@ export const useAllPlayerStore = defineStore('allPlayers', () => {
 
   return {
     lightPlayers,
-    fetchData
-  }
+    fetchAllPlayers,
+  };
 });
 

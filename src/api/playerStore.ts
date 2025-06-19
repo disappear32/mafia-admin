@@ -78,7 +78,7 @@ export const usePlayerStore = defineStore('player', () => {
 
   const history = ref<Game[]>([]);
 
-  const fetchData = (playerId: number) => {
+  const fetchCurrentPlayer = (playerId: number) => {
     //Здесь замоканные данные
     const data = stats.find((player) => player.id === playerId);
 
@@ -101,7 +101,7 @@ export const usePlayerStore = defineStore('player', () => {
     byRole,
     bySeatNumber,
     history,
-    fetchData,
+    fetchCurrentPlayer,
   }
 });
 
