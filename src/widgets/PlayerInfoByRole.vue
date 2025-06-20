@@ -46,7 +46,7 @@ const bestPlayerPointsByRole = computed(() => ({
 </script>
 
 <template>
-  <div class="flex-0-0 full-height">
+  <div class="flex-0-0">
     <v-row align="start" class="full-height">
       <v-col
         v-for="role in ROLE_NAMES"

@@ -162,8 +162,7 @@ getDataFromRouteQuery();
       v-if="currentPlayerId && !isSearchError"
       class="pt-4 d-flex flex-column fill-height"
     >
-      <h2 class="pb-4">Статистика:</h2>
-
+      <h2 class="pb-4">Общая статистика:</h2>
       <PlayerInfoStats />
 
       <h2 class="pb-4">По ролям:</h2>

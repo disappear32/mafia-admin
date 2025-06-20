@@ -95,6 +95,10 @@ const availableResults = computed(() => [
   {title: RESULT_NAMES[RESULT_IDS.LOSE], value: RESULT_IDS.LOSE}
 ]);
 
+const isBtnDisabled = computed(() => {
+  return !resultFilter.value && (!roleFilter.value || !roleFilter.value.length);
+});
+
 const resetFilters = () => {
   roleFilter.value = null;
   resultFilter.value = null;
@@ -126,7 +130,7 @@ const resetFilters = () => {
       ></v-select>
 
       <v-btn
-        :disabled="!resultFilter && !roleFilter"
+        :disabled="isBtnDisabled"
         color="primary"
         variant="outlined"
         @click="resetFilters"
